@@ -21,14 +21,14 @@ const PronosticosPage = ({setLoading,pronosticos}:any) => {
             <div className="flex-wrap ">
             {
                 pronosticos.length > 0 ?(
-                    pronosticos.map((pronostico:any,i:number)=><div key={i} style={{width:'300px'}} ><Tarjeta_Pronosticos pronostico={pronostico} /></div>)
+                    pronosticos.map((pronostico:any,i:number)=><div key={i} style={{width:'300px'}} ><Tarjeta_Pronosticos setLoading={setLoading} pronostico={pronostico} /></div>)
                 ):null
             }
             </div>
             <Ad />
         </article>
 
-        <Aside />
+        <Aside setLoading={setLoading} />
       </main>
     }
 

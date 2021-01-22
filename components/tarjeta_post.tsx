@@ -5,8 +5,9 @@ import { Arrow_circle } from './icons'
 type IProps={
     posts:IPost[] 
     postType:string
+    setLoading:any
 }
-export const Tarjeta_Post = ({posts,postType}:IProps) => {
+export const Tarjeta_Post = ({posts,postType,setLoading}:IProps) => {
     
     return <>
     {
@@ -23,7 +24,7 @@ export const Tarjeta_Post = ({posts,postType}:IProps) => {
                         </div>
 
                         <Link href={`/${postType}/${post.slug}`}>
-                            <button className="btn-secondary" > <Arrow_circle /> </button>
+                            <button onClick={()=>document.location.pathname!==`/${postType}/${post.slug}`?setLoading(true):null} className="btn-secondary" > <Arrow_circle /> </button>
                         </Link>
                     </div>
                 ))

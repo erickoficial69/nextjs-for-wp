@@ -2,11 +2,13 @@ import Link from 'next/link'
 import { IPronostico } from '../interfaces/app.interfaces'
 
 type IProps={
+    setLoading:any
     pronostico:IPronostico
 }
 
-export const Tarjeta_Pronosticos = ({pronostico}:IProps) => {
+export const Tarjeta_Pronosticos = ({pronostico,setLoading}:IProps) => {
     
+   
     return (
         <>
             <div className="flex-nowrap slide-item">
@@ -28,7 +30,7 @@ export const Tarjeta_Pronosticos = ({pronostico}:IProps) => {
                     <small>{pronostico.equipo2}</small>
                 </div>
 
-                <Link href={`/pronostico/${pronostico.slug}`} ><button className="btn-primary" >Ver Pronostico</button></Link>
+                <Link href={`/pronostico/${pronostico.slug}`} ><button onClick={()=>setLoading(true)} className="btn-primary" >Ver Pronostico</button></Link>
             </div>              
         </>
     )

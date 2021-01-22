@@ -14,8 +14,8 @@ const BlogPage = ({setLoading,posts}:any) => {
         <div className="flex-nowrap slide">
                     {
                         posts ? posts.map((post:IPost)=>(
-                            <Link href={`/post/${post.slug}`}>
-                                <a>
+                            <Link key={post.id} href={`/post/${post.slug}`}>
+                                <a onClick={()=>setLoading(true)} >
                                     <img src={post.thumbnail} />
                                     <h2>{post.title}</h2>
                                 </a>
@@ -23,19 +23,19 @@ const BlogPage = ({setLoading,posts}:any) => {
                         )):(
                             <>
                                 <Link href={`#`}>
-                                    <a>
+                                    <a onClick={()=>setLoading(true)} >
                                         <img src="/logo.png" />
                                         <h2>no data set</h2>
                                     </a>
                                 </Link>
                                 <Link href={`#`}>
-                                    <a>
+                                    <a onClick={()=>setLoading(true)} >
                                         <img src="/logo.png" />
                                         <h2>no data set</h2>
                                     </a>
                                 </Link>
                                 <Link href={`#`}>
-                                    <a>
+                                    <a onClick={()=>setLoading(true)} >
                                         <img src="/logo.png" />
                                         <h2>no data set</h2>
                                     </a>
@@ -46,10 +46,10 @@ const BlogPage = ({setLoading,posts}:any) => {
                 </div>
 
             <div className="container">
-                <Tarjeta_Post postType="post" posts={posts} />
+                <Tarjeta_Post setLoading={setLoading} postType="post" posts={posts} />
             </div>
         </article>
-        <Aside />
+        <Aside setLoading={setLoading}  />
       </main>
     }
 

@@ -5,8 +5,9 @@ type IProps={
     categoria:string
     delay?:number
     pronosticos:IPronostico[]
+    setLoading:any
 }
-export const Slide_Pronosticos = ({categoria,delay,pronosticos}:IProps) => {
+export const Slide_Pronosticos = ({categoria,delay,pronosticos,setLoading}:IProps) => {
     return (
         <>
         <div className="container">
@@ -16,7 +17,7 @@ export const Slide_Pronosticos = ({categoria,delay,pronosticos}:IProps) => {
             <div className="flex-nowrap slide-pronosticos">
                 {
                     pronosticos && pronosticos.length > 0 ?(
-                        pronosticos.map((p:IPronostico)=><Tarjeta_Pronosticos pronostico={p}/>)
+                        pronosticos.map((p:IPronostico)=><Tarjeta_Pronosticos key={p.id} setLoading={setLoading} pronostico={p}/>)
                     ):<h1>Err</h1>
                 }
             </div>

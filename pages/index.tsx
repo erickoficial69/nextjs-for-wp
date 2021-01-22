@@ -17,8 +17,8 @@ const IndexPage = ({setLoading,data_deporte,casas_apuestas}:any) => {
                 <div className="flex-nowrap slide">
                     {
                         posts ? posts.map((post:IPost)=>(
-                            <Link href={`/post/${post.slug}`}>
-                                <a>
+                            <Link key={post.id} href={`/post/${post.slug}`}>
+                                <a onClick={()=>setLoading(true)}>
                                     <img src={post.thumbnail} />
                                     <h2>{post.title}</h2>
                                 </a>
@@ -26,19 +26,19 @@ const IndexPage = ({setLoading,data_deporte,casas_apuestas}:any) => {
                         )):(
                             <>
                                 <Link href={`#`}>
-                                    <a>
+                                    <a onClick={()=>setLoading(true)}>
                                         <img src="/logo.png" />
                                         <h2>no data set</h2>
                                     </a>
                                 </Link>
                                 <Link href={`#`}>
-                                    <a>
+                                    <a onClick={()=>setLoading(true)}>
                                         <img src="/logo.png" />
                                         <h2>no data set</h2>
                                     </a>
                                 </Link>
                                 <Link href={`#`}>
-                                    <a>
+                                    <a onClick={()=>setLoading(true)}>
                                         <img src="/logo.png" />
                                         <h2>no data set</h2>
                                     </a>
@@ -50,7 +50,7 @@ const IndexPage = ({setLoading,data_deporte,casas_apuestas}:any) => {
 
                 <h2 style={{color:'var(--primary-color)',textAlign:'center',margin:'10px auto'}} >Pronósticos AW</h2>
 
-                <Slide_Pronosticos categoria="MLB" delay={2} pronosticos={data_deporte} />
+                <Slide_Pronosticos setLoading={setLoading} categoria="MLB" delay={2} pronosticos={data_deporte} />
 
                 <h2 style={{color:'var(--primary-color)',textAlign:'center',margin:'10px auto'}} >Casas de apuestas</h2> 
                 
@@ -61,7 +61,7 @@ const IndexPage = ({setLoading,data_deporte,casas_apuestas}:any) => {
                 </div>
             </article>
 
-            <Aside />
+            <Aside setLoading={setLoading} />
       </main>
     }
 
