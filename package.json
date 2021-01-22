@@ -10,8 +10,8 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1",
-    "next": "latest",
+    "isomorphic-fetch": "^3.0.0",
+    "next": "^10.0.5",
     "next-offline": "^5.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
