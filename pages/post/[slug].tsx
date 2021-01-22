@@ -28,7 +28,7 @@ const IndexPage = ({setLoading,post}:IProps) => {
                 </p>
             </div>
         </article>
-        <Aside />
+        <Aside setLoading={setLoading} />
       </main>
     }
 
