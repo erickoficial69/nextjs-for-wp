@@ -1,6 +1,9 @@
 {
   "name": "apuestan",
   "version": "1.0.0",
+  "engines" : { 
+    "node" : ">=14.0.0 <15.0.0" 
+  },
   "scripts": {
     "dev": "next",
     "build": "next build && cp .next/service-worker.js public/",
