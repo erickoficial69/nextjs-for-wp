@@ -5,6 +5,8 @@ import { Ad } from '../components/Ad'
 import { Aside } from '../components/Aside'
 import { Slide_Pronosticos } from '../components/Slide_pronosticos'
 import { Tarjeta_casas_apuestas } from '../components/Tarjeta_casa_apuestas'
+import posts from '../apis/posts.json' 
+import { IPost } from '../interfaces/app.interfaces'
 
 const IndexPage = ({setLoading,data_deporte,casas_apuestas}:any) => {
     useEffect(()=>{
@@ -13,12 +15,37 @@ const IndexPage = ({setLoading,data_deporte,casas_apuestas}:any) => {
     return <main>
             <article>
                 <div className="flex-nowrap slide">
-                    <Link href="#">
-                        <a>
-                            <img src="/img/cristiano.webp" />
-                            <h2>Cristiano notice</h2>
-                        </a>
-                    </Link>
+                    {
+                        posts ? posts.map((post:IPost)=>(
+                            <Link href={`/post/${post.slug}`}>
+                                <a>
+                                    <img src={post.thumbnail} />
+                                    <h2>{post.title}</h2>
+                                </a>
+                            </Link>
+                        )):(
+                            <>
+                                <Link href={`#`}>
+                                    <a>
+                                        <img src="/logo.png" />
+                                        <h2>no data set</h2>
+                                    </a>
+                                </Link>
+                                <Link href={`#`}>
+                                    <a>
+                                        <img src="/logo.png" />
+                                        <h2>no data set</h2>
+                                    </a>
+                                </Link>
+                                <Link href={`#`}>
+                                    <a>
+                                        <img src="/logo.png" />
+                                        <h2>no data set</h2>
+                                    </a>
+                                </Link>
+                            </>
+                        )
+                    }
                 </div>
 
                 <h2 style={{color:'var(--primary-color)',textAlign:'center',margin:'10px auto'}} >Pronósticos AW</h2>

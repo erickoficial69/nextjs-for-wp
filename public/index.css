@@ -47,6 +47,8 @@ main{
     display:grid;
     grid-template-columns: 100%;
     gap: 10px;
+    max-width: 1366px;
+    margin: 0 auto;
 }
 .btn-secondary{
     background: var(--blue-gradient);
@@ -592,6 +594,10 @@ footer{
 }
 
 @media(min-width:1366px){
+    header > nav{
+        max-width: 1400px;
+        margin: 0 auto;
+    }
     .slide-pronosticos{
         height:200px ;
     }
