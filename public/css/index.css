@@ -14,16 +14,19 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 :root{
+    --max-width-main:1366px;
+    --height-header:60px;
     --primary-color:#ff4141;
     --primary-color-dark:#b42424;
     --secondary-color:#1e73bf;
     --secondary-color-dark: #054c8a;
-    --font-color:rgb(40, 40, 40);
-    --font-secondary-color:rgb(250,250,250);
-    --app-bg-color:#f2f2f5;
+    --font-color:#373738;
+    --font-secondary-color:#f2f2f5;
+    --app-bg-color:radial-gradient(#41718873 10%, #0f58794b 100%);
     --app-shadow-color:#d2d2d3;
     --red-gradient: linear-gradient(var(--primary-color) 40%, var(--primary-color-dark) 100%);
     --blue-gradient: linear-gradient(var(--secondary-color) 40%, var(--secondary-color-dark) 100%);
+    --app-gradient:linear-gradient(var(--font-color) 10%, var(--app-shadow-color) 20%, var(--font-color) 30%, var(--app-shadow-color) 40%, var(--font-color) 50%,var(--app-shadow-color) 60%, var(--font-color) 70%,var(--app-shadow-color) 80%, var(--font-color) 90%,var(--app-shadow-color) 100%)
 }
 button{
     cursor: pointer;
@@ -43,12 +46,18 @@ h3{
 h2{
     color: var(--primary-color);
 }
+body{
+    padding-top:var(--height-header);
+    background:var(--font-secondary-color);
+}
 main{
     display:grid;
     grid-template-columns: 100%;
     gap: 10px;
-    max-width: 1366px;
+    width:98%;
+    max-width: var(--max-width-main);
     margin: 0 auto;
+    background:var(--font-secondary-color);
 }
 .btn-secondary{
     background: var(--blue-gradient);
@@ -60,13 +69,8 @@ main{
     color: var(--font-secondary-color);
 }
 
-body{
-    padding-top:65px;
-    overflow-x: hidden;
-    background:var(--app-bg-color);
-}
 header,nav{
-    height:65px;
+    height:var(--height-header);
     overflow: hidden;
 }
 header{
@@ -137,12 +141,12 @@ footer{
     position:fixed;
     top:0;
     bottom:0;
-    background: rgba(0,0,0, .8);
 }
 .navigation-shadow{
     right:0;
     width:100%;
     z-index:1000;
+    background: rgba(0,0,0, .8);
 }
 .navigation-bar{
     z-index: 1100;
@@ -154,11 +158,13 @@ footer{
     align-content: flex-start;
     height:100vh;
     transition:all .3s ease-out;
+    background: var(--red-gradient);
 }
 .navigation-bar > button{
-    width:100%;
+    width:270px;
     justify-content: flex-start;
     color:var(--font-secondary-color);
+    border-bottom:1px solid var(--app-shadow-color);
 }
 
 /*Navigation bar*/
@@ -289,15 +295,15 @@ footer{
 /* Barra Deportes */
 /* Tarjeta Post */
 .tarjeta-post{
-    border-radius: 10px;
+    border-radius: 7px;
     box-shadow: 0px 0px 2px var(--app-shadow-color);
     overflow: hidden;
     margin:10px auto;
-    height:100px;
+    height:90px;
     position:relative;
 }
 .tarjeta-post > div:first-child{
-    width:120px;
+    width:130px;
     height:100%;
 }
 .tarjeta-post > div:first-child > img{
@@ -306,14 +312,15 @@ footer{
     height:100%;
 }
 .tarjeta-post > div:nth-child(2){
-    width:calc(100% - 120px);
+    width:calc(100% - 130px);
     height:100%;
-    padding: 10px;
+    padding: 5px;
 }
 .tarjeta-post > div:nth-child(2) > p{
     word-wrap: break-word;
     padding: 5px;
     font-weight: lighter;
+    font-size:11px;
 }
 .tarjeta-post > button{
     position:absolute;
@@ -321,6 +328,7 @@ footer{
     right:5px;
 }
 .tarjeta-post > button > img{
+    width:24px;
     transform: rotate(270deg);
 }
 /* Tarjeta Post */
@@ -534,12 +542,37 @@ footer{
 
 @media(min-width:960px){
     body{
-        padding-top: 95px;
+        padding-top: 100px;
+    }
+
+    .bg{
+        background:var(--app-gradient);
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        transform: rotate(105deg) scale(1,2) ;
+        z-index:-1;
+    }
+    .bg::after{
+        content:'';
+        position:absolute;
+        top:0%;
+        left:10%;
+        width:30vmin;
+        height:30vmin;
+        border-radius:100%;
+        background: var(--app-bg-color);
+        z-index:2;
+        box-shadow:0px 0px 100px #0f58794b;
+        opacity: .2;
     }
     main{
         display:grid;
         grid-template-columns: calc(100% - 320px) 300px;
         gap: 10px;
+        width:80%;
     }
     /*header y navbar*/
     header > nav{
@@ -564,7 +597,7 @@ footer{
         border-radius: 0;
         background: var(--red-gradient);
         position:fixed;
-        top:65px;
+        top:var(--height-header);
         z-index: 100;
     }
     .barra-deportes > a{

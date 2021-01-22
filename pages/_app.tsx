@@ -16,7 +16,7 @@ function Myapp({ Component, pageProps }: AppProps) {
   return <>
         <Head>
       <title>Apuestan web</title>
-      <link rel="stylesheet" href="/index.css" />
+      <link rel="stylesheet" href="/css/index.css" />
       <link rel="manifest" href="/site.webmanifest" />
       <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="theme-color" content="rgb(10,10,10)" />
@@ -32,6 +32,7 @@ function Myapp({ Component, pageProps }: AppProps) {
     <Navigation {...pageProps}/>
 
     <Component {...pageProps}/>
+    <div className="bg"></div>
     {
       loading ? (
         <div className="loader" >
