@@ -1,0 +1,30 @@
+[
+    {
+        "nombre":"22Bet",
+        "id":1,
+        "rank":150,
+        "icono":"/img/casas_apuestas/22bet-293x90.png",
+        "promo":"Descuento del 25% en todas las apuestas"
+    },
+    {
+        "nombre":"betway",
+        "id":2,
+        "rank":150,
+        "icono":"/img/casas_apuestas/betway-logo-293x90.png",
+        "promo":"Descuento del 25% en todas las apuestas"
+    },
+    {
+        "nombre":"bodog",
+        "id":3,
+        "rank":150,
+        "icono":"/img/casas_apuestas/bodog-logo-1-293x90.png",
+        "promo":"Descuento del 25% en todas las apuestas"
+    },
+    {
+        "nombre":"betonline",
+        "id":4,
+        "rank":150,
+        "icono":"/img/casas_apuestas/temp-16-e1578847042920-242x90.png",
+        "promo":"Descuento del 25% en todas las apuestas"
+    }
+]

@@ -1,0 +1,35 @@
+[
+    {
+        "id":1,
+        "equipo1":"bostom",
+        "equipo2":"yankess",
+        "fecha":"25-11-2020",
+        "hora":"2:00 pm",
+        "title":"Mi primer post",
+        "content":"kjdvnkjdnvkdjvvd,skjnsjkfhkfkkdf,sfjkshfjkdhfjkhdfjk,sfjksfffiffdkfbkdbjdbdj,sfjbfuiebfiue",
+        "thumbnail":"/img/thumbnail/070120211610059105-325x244.png",
+        "slug":"mi-primer-pronostico"
+    },
+    {
+        "id":2,
+        "equipo1":"white sox",
+        "equipo2":"miami",
+        "fecha":"25-11-2020",
+        "hora":"2:00 pm",
+        "title":"Mi primer post",
+        "content":"kjdvnkjdnvkdjvvd,skjnsjkfhkfkkdf,sfjkshfjkdhfjkhdfjk,sfjksfffiffdkfbkdbjdbdj,sfjbfuiebfiue",
+        "thumbnail":"/img/thumbnail/080120211610065472-325x244.png",
+        "slug":"mi-segundo-pronostico"
+    },
+    {
+        "id":3,
+        "equipo1":"mets",
+        "equipo2":"cincinaty",
+        "fecha":"25-11-2020",
+        "hora":"2:00 pm",
+        "title":"Mi primer post",
+        "content":"kjdvnkjdnvkdjvvd,skjnsjkfhkfkkdf,sfjkshfjkdhfjkhdfjk,sfjksfffiffdkfbkdbjdbdj,sfjbfuiebfiue",
+        "thumbnail":"/img/thumbnail/080120211610075372-325x244.png",
+        "slug":"mi-tercer-pronostico"
+    }
+]

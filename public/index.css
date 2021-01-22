@@ -1,0 +1,641 @@
+*{
+    margin:0;
+    padding:0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    list-style: none;
+    border:none;
+    background: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color:var(--font-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+:root{
+    --primary-color:#ff4141;
+    --primary-color-dark:#b42424;
+    --secondary-color:#1e73bf;
+    --secondary-color-dark: #054c8a;
+    --font-color:rgb(40, 40, 40);
+    --font-secondary-color:rgb(250,250,250);
+    --app-bg-color:#f2f2f5;
+    --app-shadow-color:#d2d2d3;
+    --red-gradient: linear-gradient(var(--primary-color) 40%, var(--primary-color-dark) 100%);
+    --blue-gradient: linear-gradient(var(--secondary-color) 40%, var(--secondary-color-dark) 100%);
+}
+button{
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+    border-radius:5px;
+    text-transform: uppercase;
+}
+h3{
+    color:var(--secondary-color);
+}
+h2{
+    color: var(--primary-color);
+}
+main{
+    display:grid;
+    grid-template-columns: 100%;
+    gap: 10px;
+}
+.btn-secondary{
+    background: var(--blue-gradient);
+    color: var(--font-secondary-color);
+}
+
+.btn-primary{
+    background: var(--red-gradient);
+    color: var(--font-secondary-color);
+}
+
+body{
+    padding-top:65px;
+    overflow-x: hidden;
+    background:var(--app-bg-color);
+}
+header,nav{
+    height:65px;
+    overflow: hidden;
+}
+header{
+    position: fixed;
+    width:100%;
+    top:0;
+    left: auto;
+    right:0;
+    z-index: 2;
+}
+header::before{
+    position: absolute;
+    content:'';
+    width: 50%;
+    height:100%;
+    top:0%;
+    left: 0;
+    background-image: var(--blue-gradient);
+    z-index: -1;
+}
+header::after{
+    position: absolute;
+    content:'';
+    width: 50%;
+    height:100%;
+    top:0%;
+    left: 50%;
+    background-image: var(--red-gradient);
+    z-index: -1;
+}
+header,footer{
+    width:100%;
+    z-index: 1000;
+    padding: 0 2vmin;
+}
+header > nav, header > div{
+    width: 100%;
+    position: relative;
+}
+header > nav{
+    display: none !important;
+}
+footer{
+    width:100%;
+    background: var(--blue-gradient);
+}
+/*ads*/
+.ads{
+    width: 80%;
+    height:100px;
+    text-align:center;
+    margin: 0 auto;
+}
+.ads > img{
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+}
+/*ads*/
+/*Navigation bar*/
+.navigation-open{
+    left:0;
+}
+.navigation-close{
+    left:-100%;
+}
+.navigation-shadow,.navigation-bar{
+    position:fixed;
+    top:0;
+    bottom:0;
+    background: rgba(0,0,0, .8);
+}
+.navigation-shadow{
+    right:0;
+    width:100%;
+    z-index:1000;
+}
+.navigation-bar{
+    z-index: 1100;
+    width:280px;
+    display:flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    height:100vh;
+    transition:all .3s ease-out;
+}
+.navigation-bar > button{
+    width:100%;
+    justify-content: flex-start;
+    color:var(--font-secondary-color);
+}
+
+/*Navigation bar*/
+.container{
+    width:100%;
+    padding: 0 2vmin;
+}
+
+.icons{
+    width:32px;
+    height:32px;
+    background: transparent;
+}
+.flex-wrap{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flex-nowrap{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.icon-button{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+.icon-button > b{
+    margin: 0 0 0 5px;
+    font-size: 17px;
+    display: none;
+    color: var(--font-secondary-color);
+}
+
+.loader{
+    background-color:rgba(255,255,255, .8);
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: fixed;
+    width:100vw;
+    height: 100vh;
+    left: auto;
+    right:0;
+    top:0;
+    z-index: 2000;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.loader > img{
+    animation: loader 2s infinite;
+}
+.logo{
+    z-index: 2;
+    font-size: 34px;
+    font-weight: bold;
+    color:var(--font-secondary-color)
+}
+/*Efecto header*/
+.efecto-border,.efecto-gradient,.efecto-test{
+    position: relative;
+    z-index: 2;
+}
+.efecto-border::before,.efecto-gradient::after,.efecto-test::after{
+    position: absolute;
+    content:'';
+    width: 250%;
+    height:300%;
+    top:0;
+    bottom:0;
+    left: auto;
+    right:-60%;
+    transform: rotate(120deg);
+    z-index: -1;
+    box-shadow: 0px 0px 12px var(--font-color);
+}
+
+.efecto-gradient::before{
+    background-image: linear-gradient(var(--primary-color) 50%, var(--secondary-color) 50%);
+    box-shadow: none;
+}
+
+
+/*Efecto header*/
+
+/* Barra Deportes */
+.barra-deportes {
+    box-shadow: 0px 0px 4px var(--app-shadow-color);
+    margin: 6px auto;
+    width: max-content;
+    height: max-content;
+    padding:8px 0;
+    border-radius: 6px;
+}
+.barra-deportes > a{
+    width:80px;
+    height:80px;
+    border-right: 2px solid var(--app-shadow-color);
+    text-align: center;
+}
+.barra-deportes > a:last-child{
+    border-right: none;
+}
+
+.barra-deportes > a > img{
+    width:65%;
+    height: 65%;
+    object-fit: contain;
+    border-radius: 20%;
+    padding:2px;
+    box-shadow: 0px 0px 4px var(--app-shadow-color);
+    background-color: white;
+}
+.barra-deportes > a > p{
+    width:100%;
+    overflow: hidden;
+    text-align: center;
+}
+/* Barra Deportes */
+/* Tarjeta Post */
+.tarjeta-post{
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px var(--app-shadow-color);
+    overflow: hidden;
+    margin:10px auto;
+    height:100px;
+    position:relative;
+}
+.tarjeta-post > div:first-child{
+    width:120px;
+    height:100%;
+}
+.tarjeta-post > div:first-child > img{
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+.tarjeta-post > div:nth-child(2){
+    width:calc(100% - 120px);
+    height:100%;
+    padding: 10px;
+}
+.tarjeta-post > div:nth-child(2) > p{
+    word-wrap: break-word;
+    padding: 5px;
+    font-weight: lighter;
+}
+.tarjeta-post > button{
+    position:absolute;
+    bottom: 5px;
+    right:5px;
+}
+.tarjeta-post > button > img{
+    transform: rotate(270deg);
+}
+/* Tarjeta Post */
+
+/* slide principal*/
+.slide{
+    width:100%;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+.slide > a{
+    width:96%;
+    min-width:96%;
+    height:480px;
+    position: relative;
+    text-align: center;
+    margin:0 2%;
+    overflow: hidden;
+}
+.slide > a:first-child{
+    animation:translate 15s linear infinite;
+}
+.slide > a > img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    position: relative;
+    margin:0 auto;
+    border-radius: 8px;
+}
+.slide > a > h2{
+    width:90%;
+    position: absolute;
+    bottom: 10px;
+    left: auto;
+    overflow: hidden;
+    color:var(--font-secondary-color);
+}
+/* slide principal*/
+
+/* slide pronosticos */
+.titulo-pronosticos {
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.titulo-pronosticos > div{
+    height: 1px;
+    width:calc(100% - 180px);
+    background-color: grey;
+}
+.titulo-pronosticos > h3{
+    color:var(--secondary-color);
+}
+.slide-pronosticos{
+    width: 100%;
+    height:150px;
+    overflow: hidden;
+}
+.slide-item{
+    height:100px ;
+    background: var(--blue-gradient);
+    border-radius: 6px;
+    overflow:visible ;
+    width:96%;
+    min-width:96%;
+    position: relative;
+    margin:20px 2%;
+    align-items: flex-start;
+    padding-top: 10px;
+}
+.slide-pronosticos > .slide-item:first-child{
+    animation:translate 15s linear infinite;
+}
+
+.slide-item > div{
+    width:33.3%;
+    height:70%;
+    position: relative;
+    align-items: center;
+    align-content: center;
+}
+.slide-item > div > img{
+    height:85%;
+    object-fit: contain;
+}
+.slide-item > div > b{
+    font-size: 28px;
+}
+.slide-item > div > p{
+    font-size: 11px;
+}
+.slide-item > div > b,.slide-item > div > p{
+    width:100%;
+    text-align: center;
+    color:var(--font-secondary-color);
+    padding:0;
+}
+.slide-item > div > small{
+    width:100%;
+    overflow: hidden;
+    word-wrap: none;
+    color:var(--font-secondary-color);
+    text-align:center;
+    font-weight: bold;
+    margin-top: 2px;
+}
+.slide-item > button{
+    width:150px;
+    position: absolute;
+    bottom: -15px;
+    left: calc(50% - 75px);
+}
+/* slide pronosticos*/
+
+/* Tarjeta casa apuestas */
+.tarjeta-casa-apuesta{
+    width:150px;
+    height:220px;
+    align-items: flex-start;
+    position: relative;
+    margin:10px auto;
+    background-color: white;
+}
+
+.tarjeta-casa-apuesta > div{
+    height:100px;
+    width:100%;
+    position:relative;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+}
+.tarjeta-casa-apuesta > div:first-child::after{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    content:attr(title);
+    background:rgba(2, 26, 78, 0.705);
+    color:var(--font-secondary-color);
+    font-weight:bold;
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.tarjeta-casa-apuesta > div > img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+}
+.tarjeta-casa-apuesta > div > div > img{
+    width:90%;
+    height:90%;
+    object-fit: contain;
+}
+
+.tarjeta-casa-apuesta > div > div, .tarjeta-casa-apuesta > div > small{
+    width:95%;
+    display:block;
+    text-align:center;
+}
+.tarjeta-casa-apuesta > div > div{
+    border-bottom: 1px solid var(--app-shadow-color);
+}
+.tarjeta-casa-apuesta > div > small{
+    color:yellow;
+    padding:5px 2px;
+}
+.tarjeta-casa-apuesta > button{
+    margin:0;
+    padding:0;
+    width:100%;
+    border-radius: 0;
+}
+/* Tarjeta casa apuestas */
+
+/*post body*/
+.post-body > img{
+    width:100%;
+    height:400px;
+    object-fit: contain;
+}
+/*post body*/
+@media(min-width:405px){
+    .slide-pronosticos{
+        height:180px ;
+    }
+    .slide-item{
+        height:120px ;
+    }
+    .slide-item > div {
+        height:85%;
+        object-fit: contain;
+    }
+}
+@media(min-width:512px){
+    .icon-button > b{
+        display: block;
+    }
+    .efecto-border::before,.efecto-gradient::after,.efecto-test::after{
+        width: 250%;
+        height:400%;
+        right:-48%;
+    }
+}
+
+@media(min-width:960px){
+    body{
+        padding-top: 95px;
+    }
+    main{
+        display:grid;
+        grid-template-columns: calc(100% - 320px) 300px;
+        gap: 10px;
+    }
+    /*header y navbar*/
+    header > nav{
+        display: flex !important;
+    }
+    header > nav > button{
+        font-size: 18px;
+        color:var(--font-secondary-color);
+    }
+    
+    header > div{
+        display: none !important;
+    }
+    /*header y navbar*/
+
+    /*Barra deportes*/
+    .barra-deportes {
+        box-shadow: 0px 0px 1px var(--app-shadow-color);
+        margin: 0 0 10px 0;
+        width: 100%;
+        padding:2px 0;
+        border-radius: 0;
+        background: var(--red-gradient);
+        position:fixed;
+        top:65px;
+        z-index: 100;
+    }
+    .barra-deportes > a{
+        width:max-content;
+        height:max-content;
+        border-right: none;
+        text-align: center;
+    }
+    
+    .barra-deportes > a > img{
+        display: none;
+    }
+    .barra-deportes > a > p{
+        overflow: unset;
+        height:20px;
+        color: var(--font-secondary-color);
+    }
+    /*Barra deportes*/
+
+
+    .efecto-test::after{
+        right:-100%;
+        width:300%;
+        height: 300%;
+        box-shadow: 0px -5px 6px rgba(43, 43, 43, 0.5);
+    }
+}
+
+@media(min-width:1366px){
+    .slide-pronosticos{
+        height:200px ;
+    }
+    .slide-item{
+        height:150px ;
+    }
+    .slide-item > div {
+        height:95%;
+        object-fit: contain;
+    }
+    .slide-item > div > b{
+        font-size: 32px;
+    }
+    .slide-item > div > p{
+        font-size: 16px;
+    }
+}
+
+@keyframes loader{
+    0%,50%{
+        transform: rotate(180deg);
+    }
+    50%,100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes translate{
+    0%,20%{
+        margin-left: 2%;
+    }
+    20%,33%{
+        margin-left: 2%;
+    }
+    33%,53%{
+        margin-left: -98%;
+    }
+    53%,66%{
+        margin-left: -98%;
+    }
+    66%,86%{
+        margin-left: -198%;
+    }
+    86%,100%{
+        margin-left: -198%;
+    }
+}

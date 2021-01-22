@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "nombre":"NBA",
+        "icono":"/img/iconos_deportes/futbol.webp"
+    },
+    {
+        "id":2,
+        "nombre":"MLB",
+        "icono":"/img/iconos_deportes/mlb.webp"
+    },
+    {
+        "id":3,
+        "nombre":"Futbol",
+        "icono":"/img/iconos_deportes/futbol.webp"
+    },
+    {
+        "id":4,
+        "nombre":"NFL",
+        "icono":"/img/iconos_deportes/nfl.webp"
+    }
+]

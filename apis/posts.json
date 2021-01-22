@@ -1,0 +1,30 @@
+[
+    {
+        "id":1,
+        "title":"Mi primer post",
+        "content":"kjdvnkjdnvkdjvvd,skjnsjkfhkfkkdf,sfjkshfjkdhfjkhdfjk,sfjksfffiffdkfbkdbjdbdj,sfjbfuiebfiue",
+        "thumbnail":"/img/cristiano.webp",
+        "slug":"mi-primer-post"
+    },
+    {
+        "id":2,
+        "title":"Mi segundo post",
+        "content":"kjdvnkjdnvkdjvvd,skjnsjkfhkfkkdf,sfjkshfjkdhfjkhdfjk,sfjksfffiffdkfbkdbjdbdj,sfjbfuiebfiue",
+        "thumbnail":"/img/cristiano.webp",
+        "slug":"mi-segundo-post"
+    },
+    {
+        "id":3,
+        "title":"Mi tercer post",
+        "content":"kjdvnkjdnvkdjvvd,skjnsjkfhkfkkdf,sfjkshfjkdhfjkhdfjk,sfjksfffiffdkfbkdbjdbdj,sfjbfuiebfiue",
+        "thumbnail":"/img/cristiano.webp",
+        "slug":"mi-tercer-post"
+    },
+    {
+        "id":4,
+        "title":"Mi cuarto post",
+        "content":"kjdvnkjdnvkdjvvd,skjnsjkfhkfkkdf,sfjkshfjkdhfjkhdfjk,sfjksfffiffdkfbkdbjdbdj,sfjbfuiebfiue",
+        "thumbnail":"/img/cristiano.webp",
+        "slug":"mi-cuarto-post"
+    }
+]
